@@ -1,33 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:shwe_stream_test/home_page.dart';
 import 'package:shwe_stream_test/package_get_service.dart';
 import 'package:shwe_stream_test/rule%20_question_bottom_app_bar.dart';
 
-class LoginPage extends StatefulWidget {
-  LoginPage({Key key}) : super(key: key);
+class OPTCodePage extends StatefulWidget {
+  OPTCodePage({Key key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _OPTCodePageState createState() => _OPTCodePageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  TextStyle loginPageStyle =
+class _OPTCodePageState extends State<OPTCodePage> {
+  TextStyle optCodePageStyle =
   TextStyle(fontFamily: 'Montserrat', fontSize: 15.0);
 
   @override
   Widget build(BuildContext context) {
-    final phoneField = TextField(
+    final optField = TextField(
+      textAlign: TextAlign.center,
       keyboardType: TextInputType.number,
       obscureText: false,
-      style: loginPageStyle,
+      style: optCodePageStyle,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.fromLTRB(20, 16, 16, 16),
-        hintText: "Enter Your Phone Number",
-        prefixText: "09 -  ",
+        contentPadding: EdgeInsets.fromLTRB(10, 8, 8, 8),
+        hintText: "ကုဒ်နံပါတ်ထည့်ရန်",
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(30.0)),
       ),
     );
 
-    final loginButton = Material(
+    final confirmButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
       color: Color(0xffb06fa2),
@@ -40,12 +41,12 @@ class _LoginPageState extends State<LoginPage> {
         onPressed: () {
           Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => PackageGetService()));
+              MaterialPageRoute(builder: (context) => HomePage()));
         },
         child: Text(
-          "ဝင်မည်".toUpperCase(),
+          "အတည်ပြုမည်",
           textAlign: TextAlign.center,
-          style: loginPageStyle.copyWith(
+          style: optCodePageStyle.copyWith(
             color: Colors.white,
             fontSize: 16,
             fontWeight: FontWeight.bold,
@@ -63,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   SizedBox(
                     height: 130.0,
@@ -72,24 +73,22 @@ class _LoginPageState extends State<LoginPage> {
                       fit: BoxFit.fill,
                     ),
                   ),
-                  SizedBox(height: 25.0),
-                  Text(
-                    "မြန်မာရုပ်ရှင်၊ ဗီဒီယိုနှင့်ကိုရီးယားဇာတ်လမ်းတွဲများကို စိတ်ကြိုက်ကြည့်ရှုနိုင်ပါသည််။",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 16, color: Color(0xffb06fa2)),
-                  ),
-                  SizedBox(height: 15.0),
-                  Text("တစ်ရက် ၉၉ကျပ်",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 16)),
                   SizedBox(
                     height: 35.0,
                   ),
-                  phoneField,
+                  optField,
                   SizedBox(
                     height: 15.0,
                   ),
-                  loginButton,
+                  confirmButton,
+                  Container(
+                    padding: const EdgeInsets.all(16.0),
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      "ကုဒ်ပြန်ယူရန် ( 2:30) မိနစ်",
+                      style: TextStyle(fontSize: 15, color: Color(0xffb06fa2)),
+                    ),
+                  ),
                 ],
               ),
             ),

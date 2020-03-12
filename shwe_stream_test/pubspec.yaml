@@ -23,6 +23,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  carousel_slider: ^1.3.0
 
 dev_dependencies:
   flutter_test:
@@ -42,11 +43,11 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/1.png
-    - assets/2.png
-    - assets/3.png
-    - assets/4.png
-    - assets/lake.jpg
+    - assets/shwestream_banner.jpg
+    - assets/image_slider_one.jpg
+    - assets/image_slider_two.jpg
+    - assets/image_slider_three.jpg
+    - assets/image_slider_four.jpg
     - assets/logo.jpg
     - assets/movieposter.jpg
     - assets/movieposter1.jpg
