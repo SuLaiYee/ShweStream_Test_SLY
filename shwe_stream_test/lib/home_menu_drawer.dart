@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shwe_stream_test/home_page.dart';
+import 'package:shwe_stream_test/movie_category_grid.dart';
 
 class HomeMenuDrawer extends StatelessWidget{
   @override
@@ -14,15 +16,15 @@ class HomeMenuDrawer extends StatelessWidget{
                   child: Row(
                     children: <Widget>[
                       Image.asset(
-                        "assets/logo.jpg",
-                        width: 60,
-                        height: 60,
+                        "assets/s_logo.png",
+                        width: 65,
+                        height: 65,
                       ),
                       Container(
                         padding: EdgeInsets.all(16.0),
                         child: Text(
                           "SHWEStream",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(color:Colors.white, fontSize: 20),
                         ),
                       ),
                     ],
@@ -30,19 +32,35 @@ class HomeMenuDrawer extends StatelessWidget{
           new ListTile(
               title: new Text("ပင်မ စာမျက်နှာ"),
               trailing: new Icon(Icons.home),
-              onTap: () {}),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              }),
           new ListTile(
               title: new Text("မြန်မာဇာတ်ကားမျာ"),
               trailing: new Icon(Icons.arrow_right),
-              onTap: () {}),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MovieCategoryGrid(title: "မြန်မာဇာတ်ကားများ")));
+              }),
           new ListTile(
               title: new Text("ကိုရီးယားဇာတ်ကားများ"),
               trailing: new Icon(Icons.arrow_right),
-              onTap: () {}),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MovieCategoryGrid(title: "ကိုရီးယားဇာတ်ကားများ")));
+              }),
           new ListTile(
               title: new Text("အိန္ဒိယရုပ်ရှင်များ"),
               trailing: new Icon(Icons.arrow_right),
-              onTap: () {}),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MovieCategoryGrid(title: "အိန္ဒိယရုပ်ရှင်များ")));
+              }),
           new Divider(),
           new ListTile(
               title: new Text("ဒေါင်းလုပ် ဆွဲထားပြီး"),

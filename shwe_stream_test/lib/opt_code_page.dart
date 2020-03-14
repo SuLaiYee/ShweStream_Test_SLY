@@ -67,9 +67,9 @@ class _OPTCodePageState extends State<OPTCodePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   SizedBox(
-                    height: 130.0,
+                    height: 250.0,
                     child: Image.asset(
-                      "assets/logo.jpg",
+                      "assets/login_white.png",
                       fit: BoxFit.fill,
                     ),
                   ),

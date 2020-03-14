@@ -66,13 +66,13 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   SizedBox(
-                    height: 130.0,
+                    height: 250.0,
                     child: Image.asset(
-                      "assets/logo.jpg",
+                      "assets/login_white.png",
                       fit: BoxFit.fill,
                     ),
                   ),
-                  SizedBox(height: 25.0),
+                  SizedBox(height: 20.0),
                   Text(
                     "မြန်မာရုပ်ရှင်၊ ဗီဒီယိုနှင့်ကိုရီးယားဇာတ်လမ်းတွဲများကို စိတ်ကြိုက်ကြည့်ရှုနိုင်ပါသည််။",
                     textAlign: TextAlign.center,
@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16)),
                   SizedBox(
-                    height: 35.0,
+                    height: 20.0,
                   ),
                   phoneField,
                   SizedBox(
@@ -96,7 +96,9 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
-      bottomNavigationBar: RulesAndQuestionBottomBar(),
+      bottomNavigationBar: Container(
+        margin: EdgeInsets.only(top: 16.0),
+         child:  RulesAndQuestionBottomBar()),
     );
   }
 }

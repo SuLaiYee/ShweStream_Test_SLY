@@ -48,7 +48,7 @@ class _PackageGetServiceState extends State<PackageGetService> {
                 width: MediaQuery.of(context).size.width,
                 height: 330,
                 decoration:new BoxDecoration(
-                  image: new DecorationImage(image: new ExactAssetImage('assets/shwestream_banner.jpg'),
+                  image: new DecorationImage(image: new ExactAssetImage('assets/landing_top_ad.png'),
                   fit: BoxFit.fill),
                 ),
               ),

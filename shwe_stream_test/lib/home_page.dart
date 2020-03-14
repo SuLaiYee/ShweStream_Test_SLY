@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:shwe_stream_test/home_menu_drawer.dart';
+import 'package:shwe_stream_test/movie_category_list.dart';
+
+import 'adv_promotion.dart';
 
 class HomePage extends StatefulWidget{
   @override
@@ -22,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
 
     final CarouselSlider autoPlayDemo = CarouselSlider(
-      height: 260,
+      height: 240,
       viewportFraction: 0.9,
       aspectRatio: 2.3,
       autoPlay: true,
@@ -47,15 +50,49 @@ class _HomePageState extends State<HomePage> {
 
     return new Scaffold(
         appBar: new AppBar(
-            title: new Text("SHWEStream"), backgroundColor: Color(0xffb06fa2)),
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Expanded(
+                child:  Image.asset(
+                    'assets/landing_tittle.png',
+                    fit: BoxFit.contain,
+                    height: 33 ,
+                  alignment: Alignment.centerLeft,
+                  ),
+                  flex: 7,
+                ),
+                Expanded(
+                  child: IconButton(
+                    icon: Icon(Icons.search, color: Colors.white,),
+                    tooltip: 'Search',
+                    onPressed: null,
+                  ),
+                  flex: 2,
+                ),
+                Expanded(
+                  child: IconButton(
+                    icon: Icon(Icons.notifications_none, color: Colors.white,),
+                    tooltip: 'Setting',
+                    onPressed: null,
+                  ),
+                )
+              ],
+            ),
+            backgroundColor: Color(0xffb06fa2)),
+
         drawer: HomeMenuDrawer(),
         body: Container(
             child: ListView(
               children: <Widget>[
                 autoPlayDemo,
-               /* Promotion(),
-                ListViewWithRowTest(),
-                MovieCardTest(),*/
+                //ADPromotion(),
+                MovieCategoryList(title : "မြန်မာရုပ်ရှင်ဇာတ်ကားကောင်းများ"),
+                MovieCategoryList(title :"ကိုရီးယားဒရာမာဇာတ်လမ်းတွဲများ"),
+                MovieCategoryList(title :"သဘာဝလွန်ဖြစ်ရပ်ဆန်းများ"),
+                MovieCategoryList(title :"တဝါးဝါး တဟားဟား"),
+                MovieCategoryList(title :"အက်ရှင် ဖိုက်တင်"),
+                MovieCategoryList(title :"အငြိမ့်နှင့်နှစ်ပါးသွား"),
               ],
             )));
   }
