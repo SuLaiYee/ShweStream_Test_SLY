@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:chewie/chewie.dart';
+import 'package:chewie/src/chewie_player.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:shwe_stream_test/video_player.dart';
+import 'package:video_player/video_player.dart';
 
 class MoviesDetails extends StatefulWidget {
   MoviesDetails({Key key}) : super(key: key);
@@ -43,7 +48,7 @@ class _MoviesDetailsState extends State<MoviesDetails> {
           ),
           backgroundColor: Color(0xffb06fa2)),
       body: Center(
-
+          child: ChewieDemo()
       ),
     );
   }

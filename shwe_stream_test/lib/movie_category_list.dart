@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shwe_stream_test/movie_category_grid.dart';
+import 'package:shwe_stream_test/movies_details.dart';
 
 class MovieCategoryList extends StatelessWidget {
   MovieCategoryList({this.title});
@@ -8,30 +9,32 @@ class MovieCategoryList extends StatelessWidget {
 
   Container MoviesCategory(String movieLogo, String movieName) {
     return Container(
-        margin: EdgeInsets.fromLTRB(4, 4, 0, 0),
+        //margin: EdgeInsets.fromLTRB(4, 4, 0, 0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(right: 4),
+            Expanded(
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(10.0),
-                child: Image.asset(
-                  movieLogo,
-                  height: 150.0,
-                  width: 110.0,
-                  fit: BoxFit.fill,
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(10.0),topRight: Radius.circular(10.0)),
+                  child: Image.asset(
+                    movieLogo,
+                    height: 150.0,
+                    width: 110.0,
+                    fit: BoxFit.fill,
+                  ),
                 ),
-              ),
             ),
-            Padding(
-              padding: EdgeInsets.all(4),
-              child: Text(movieName),
-            )
+            SizedBox(
+              height: 30,
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Text(movieName, textAlign: TextAlign.center,),
+                )),
           ],
-        ));
+        )
+    );
   }
 
   @override
@@ -40,20 +43,22 @@ class MovieCategoryList extends StatelessWidget {
       shrinkWrap: true,
      scrollDirection: Axis.horizontal,
       itemCount: 15,
-      itemBuilder: (BuildContext context, int index) => Card(
-        child:  MoviesCategory("assets/movieposter.jpg", "Vip"),
+      itemBuilder: (BuildContext context, int index) => Material(
+        child: InkWell(
+          onTap: (){
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MoviesDetails()));
+          },
+          child: Container(
+            margin: EdgeInsets.fromLTRB(4, 0, 0, 4),
+            child: Card(
+              child:  MoviesCategory("assets/movieposter1.jpg", "Vip"),
+            ),
+          ),
+        ),
       ),
     );
-
-     /* children: <Widget>[
-
-        MoviesCategory("assets/movieposter1.jpg", "Another Miss oh"),
-        MoviesCategory("assets/movieposter5.jpg", "We Got"),
-        MoviesCategory("assets/movieposter6.jpg", "S4"),
-        MoviesCategory("assets/movieposter2.jpg", "Rommance"),
-        MoviesCategory("assets/movieposter3.jpg", "Descend"),
-        MoviesCategory("assets/movieposter4.jpg", "Ghost"),
-      ],*/
 
     //Movie List Title
     var movieCategoryTitle = Container(
@@ -99,7 +104,7 @@ class MovieCategoryList extends StatelessWidget {
 
     return Container(
       //margin: EdgeInsets.fromLTRB(4, 0, 4, 0),
-      height: 225,
+      height: 230,
       child: moviesCategory,
     );
   }
