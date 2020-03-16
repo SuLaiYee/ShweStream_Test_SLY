@@ -19,7 +19,7 @@ class _PackageGetServiceState extends State<PackageGetService> {
     final serviceBtn = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xffb06fa2),
+      color: Color(0xffc030b9),
       child: MaterialButton(
         minWidth: 180,
         padding: EdgeInsets.all(8.0),
@@ -58,7 +58,7 @@ class _PackageGetServiceState extends State<PackageGetService> {
                 child: Text(
                   "မြန်မာရုပ်ရှင်၊ ဗီဒီယိုနှင့်ကိုရီးယားဇာတ်လမ်းတွဲများကို စိတ်ကြိုက်ကြည့်ရှုနိုင်ပါသည််။",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 15, color: Color(0xffb06fa2)),
+                  style: TextStyle(fontSize: 15, color: Color(0xffd83da3)),
                 ),
               ),
               //SizedBox(height: 15.0),
@@ -66,7 +66,7 @@ class _PackageGetServiceState extends State<PackageGetService> {
                 width: 150,
                 child: Divider(
                   thickness: 3,
-                  color: Color(0xffb06fa2),
+                  color: Color(0xffd83da3),
                 ),
               ),
               Text("တစ်ရက် ၉၉ကျပ်",
@@ -75,7 +75,7 @@ class _PackageGetServiceState extends State<PackageGetService> {
                 width: 150,
                 child: Divider(
                   thickness: 3,
-                  color: Color(0xffb06fa2),
+                  color: Color(0xffd83da3),
                 ),
               ),
               SizedBox(

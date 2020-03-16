@@ -31,7 +31,7 @@ class _OPTCodePageState extends State<OPTCodePage> {
     final confirmButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xffb06fa2),
+      color: Color(0xffc030b9),
       child: MaterialButton(
         minWidth: MediaQuery
             .of(context)
@@ -86,7 +86,7 @@ class _OPTCodePageState extends State<OPTCodePage> {
                     alignment: Alignment.centerRight,
                     child: Text(
                       "ကုဒ်ပြန်ယူရန် ( 2:30) မိနစ်",
-                      style: TextStyle(fontSize: 15, color: Color(0xffb06fa2)),
+                      style: TextStyle(fontSize: 15, color: Color(0xffd83da3)),
                     ),
                   ),
                 ],

@@ -10,24 +10,16 @@ class HomeMenuDrawer extends StatelessWidget{
       child: new ListView(
         children: <Widget>[
           new DrawerHeader(
-              decoration: BoxDecoration(color: Color(0xffb06fa2)),
+              decoration: BoxDecoration(color: Color(0xffD6D6D6)),
               child: Container(
                   padding: EdgeInsets.only(left: 18.0),
-                  child: Row(
-                    children: <Widget>[
-                      Image.asset(
-                        "assets/s_logo.png",
-                        width: 65,
-                        height: 65,
+                  child: SizedBox(
+                      child: Image.asset(
+                        "assets/drawer_logo_1.png",
+                        width: 100,
+                        height: 100,
                       ),
-                      Container(
-                        padding: EdgeInsets.all(16.0),
-                        child: Text(
-                          "SHWEStream",
-                          style: TextStyle(color:Colors.white, fontSize: 20),
-                        ),
-                      ),
-                    ],
+
                   ))),
           new ListTile(
               title: new Text("ပင်မ စာမျက်နှာ"),

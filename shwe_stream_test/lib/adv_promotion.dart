@@ -12,10 +12,10 @@ class ADPromotion extends StatelessWidget {
         height: 55,
         shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(10.0),
-            side: BorderSide(color: Color(0xffb06fa2))),
+            side: BorderSide(color: Color(0xffd83da3))),
         child: RaisedButton(
           onPressed: () {},
-          color: Color(0xffb06fa2),
+          color: Color(0xffd83da3),
           textColor: Colors.white,
           disabledColor: Colors.grey,
           disabledTextColor: Colors.black,

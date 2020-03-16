@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
     final loginButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xffb06fa2),
+      color: Color(0xffc030b9),
       child: MaterialButton(
         minWidth: MediaQuery
             .of(context)
@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                   Text(
                     "မြန်မာရုပ်ရှင်၊ ဗီဒီယိုနှင့်ကိုရီးယားဇာတ်လမ်းတွဲများကို စိတ်ကြိုက်ကြည့်ရှုနိုင်ပါသည််။",
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 16, color: Color(0xffb06fa2)),
+                    style: TextStyle(fontSize: 16, color: Color(0xffd83da3)),
                   ),
                   SizedBox(height: 15.0),
                   Text("တစ်ရက် ၉၉ကျပ်",

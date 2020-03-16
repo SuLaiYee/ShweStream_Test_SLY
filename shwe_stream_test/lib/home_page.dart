@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                 )
               ],
             ),
-            backgroundColor: Color(0xffb06fa2)),
+            backgroundColor: Color(0xffc030b9)),
 
         drawer: HomeMenuDrawer(),
         body: Container(

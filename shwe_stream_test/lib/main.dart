@@ -11,7 +11,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  MaterialColor colorCustom = MaterialColor(0xffb06fa2, color);
+  MaterialColor colorCustom = MaterialColor(0xffc030b9, color);
 
   @override
   Widget build(BuildContext context) {
