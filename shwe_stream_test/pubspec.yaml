@@ -64,6 +64,13 @@ flutter:
     - assets/landing_top_ad.png
     - assets/s_logo.png
     - assets/landing_tittle.png
+    - assets/video_start.png
+    - assets/star_pink.png
+    - assets/heart_outline.png
+    - assets/down_pink.png
+
+
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:

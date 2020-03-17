@@ -46,21 +46,21 @@ class _ChewieDemoState extends State<ChewieDemo> {
     _chewieController = ChewieController(
       videoPlayerController: _videoPlayerController1,
       aspectRatio: 3 / 2,
-      autoPlay: true,
+      autoPlay: false,
       looping: true,
-      // Try playing around with some of these other options:
+      //Try playing around with some of these other options:
 
-      // showControls: false,
-      // materialProgressColors: ChewieProgressColors(
-      //   playedColor: Colors.red,
-      //   handleColor: Colors.blue,
-      //   backgroundColor: Colors.grey,
-      //   bufferedColor: Colors.lightGreen,
-      // ),
-      // placeholder: Container(
-      //   color: Colors.grey,
-      // ),
-      // autoInitialize: true,
+       //showControls: false,
+        materialProgressColors: ChewieProgressColors(
+      //  playedColor: Colors.red,
+        handleColor: Colors.blue,
+          backgroundColor: Colors.grey,
+        bufferedColor: Colors.lightGreen,
+       ),
+       placeholder: Container(
+         color: Colors.grey,
+       ),
+       autoInitialize: true,
     );
   }
 

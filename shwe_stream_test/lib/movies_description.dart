@@ -50,7 +50,7 @@ class _DescriptionTextWidgetState extends State<DescriptionTextWidget> {
                         children: <Widget>[
                           new Text(
                             flag ? "show more" : "show less",
-                            style: new TextStyle(color: Colors.blue),
+                            style: new TextStyle(color: Colors.grey),
                           ),
                         ],
                       ),
