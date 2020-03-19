@@ -51,12 +51,12 @@ class _ChewieDemoState extends State<ChewieDemo> {
       allowFullScreen: false,
       allowMuting: false,
       //showControlsOnInitialize: false,
-      isLive: false,
+      //isLive: false,
       showControlsOnInitialize: false,
 
       //Try playing around with some of these other options:
 
-       showControls: false,
+       //showControls: false,
         materialProgressColors: ChewieProgressColors(
         playedColor: Colors.red,
 

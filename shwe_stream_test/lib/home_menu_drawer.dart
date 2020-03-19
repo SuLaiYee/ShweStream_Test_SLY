@@ -57,7 +57,11 @@ class HomeMenuDrawer extends StatelessWidget{
           new ListTile(
               title: new Text("ဒေါင်းလုပ် ဆွဲထားပြီး"),
               trailing: new Icon(Icons.arrow_right),
-              onTap: () {}),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MovieCategoryGrid(title: "အိန္ဒိယရုပ်ရှင်များ")));
+              }),
           new ListTile(
               title: new Text("ကိုယ့်စိတ်ကြိုက်"),
               trailing: new Icon(Icons.arrow_right),

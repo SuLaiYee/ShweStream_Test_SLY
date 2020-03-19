@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:shwe_stream_test/home_menu_drawer.dart';
+import 'package:shwe_stream_test/home_page_app_bar.dart';
 import 'package:shwe_stream_test/movie_category_list.dart';
 
 import 'adv_promotion.dart';
@@ -50,37 +51,8 @@ class _HomePageState extends State<HomePage> {
 
     return new Scaffold(
         appBar: new AppBar(
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Expanded(
-                child:  Image.asset(
-                    'assets/landing_tittle.png',
-                    fit: BoxFit.contain,
-                    height: 33 ,
-                  alignment: Alignment.centerLeft,
-                  ),
-                  flex: 7,
-                ),
-                Expanded(
-                  child: IconButton(
-                    icon: Icon(Icons.search, color: Colors.white,),
-                    tooltip: 'Search',
-                    onPressed: null,
-                  ),
-                  flex: 2,
-                ),
-                Expanded(
-                  child: IconButton(
-                    icon: Icon(Icons.notifications_none, color: Colors.white,),
-                    tooltip: 'Setting',
-                    onPressed: null,
-                  ),
-                )
-              ],
-            ),
+            title: HomePageAppBar(),
             backgroundColor: Color(0xffc030b9)),
-
         drawer: HomeMenuDrawer(),
         body: Container(
             child: ListView(
