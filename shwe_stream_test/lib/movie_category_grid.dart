@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shwe_stream_test/movies_details.dart';
 
 class MovieCategoryGrid extends StatelessWidget {
   MovieCategoryGrid({this.title});
@@ -31,11 +32,9 @@ class MovieCategoryGrid extends StatelessWidget {
     double cardHeight = MediaQuery.of(context).size.height / 4.5;
     return Scaffold(
       appBar: AppBar(
-        title: Text(title, style: TextStyle(
-        fontSize: 18)),
+        title: Text(title, style: TextStyle(fontSize: 18)),
       ),
-      body: Center(
-          child: Container(
+      body: Container(
         padding: EdgeInsets.all(8.0),
         child: GridView.builder(
           itemCount: images.length,
@@ -44,15 +43,19 @@ class MovieCategoryGrid extends StatelessWidget {
               crossAxisCount: 3,
               crossAxisSpacing: 4,
               mainAxisSpacing: 4.0),
-          itemBuilder: (BuildContext context, int index) {
-            return Image.asset(
-              images[index],
-              fit: BoxFit.fill,
-            );
-            //Image.network(images[index]);
-          },
+          itemBuilder: (BuildContext context, int index) => Material(
+            child: InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MoviesDetails()));
+                },
+                child: Image.asset(
+                  images[index],
+                  fit: BoxFit.fill,
+                )),
+          ),
         ),
-      )),
+      ),
     );
   }
 }
