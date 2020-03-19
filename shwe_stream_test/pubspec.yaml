@@ -68,6 +68,15 @@ flutter:
     - assets/star_pink.png
     - assets/heart_outline.png
     - assets/down_pink.png
+    - assets/heart_outline.png
+    - assets/button_pink_bg.png
+    - assets/heart_24.png
+    - assets/heart_fav_pink.png
+    - assets/load_96.png
+    - assets/loading_96.png
+    - assets/video_error.png
+    - assets/video_notfound.png
+    - assets/user_profile.png
 
 
 
