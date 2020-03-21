@@ -58,11 +58,11 @@ class _ChewieDemoState extends State<ChewieDemo> {
 
        //showControls: false,
         materialProgressColors: ChewieProgressColors(
-        playedColor: Colors.red,
+        playedColor: Color(0xffe64a8b),
 
-        handleColor: Colors.blue,
+        handleColor: Colors.purple,
           backgroundColor: Colors.grey,
-        bufferedColor: Colors.lightGreen,
+        bufferedColor: Color(0xffbf34b5),
        ),
        placeholder: Container(
          color: Colors.grey,

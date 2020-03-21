@@ -70,7 +70,7 @@ class MovieCategoryList extends StatelessWidget {
             flex: 3,
             child: Text(
               title,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
           ),
           new GestureDetector(
@@ -83,7 +83,7 @@ class MovieCategoryList extends StatelessWidget {
             },
             child: Text(
               "အားလုံး >>",
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
             ),
           ),
         ],

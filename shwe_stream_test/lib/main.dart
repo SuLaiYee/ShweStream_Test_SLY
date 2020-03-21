@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shwe_stream_test/home_page.dart';
 import 'package:shwe_stream_test/login_page.dart';
 import 'package:shwe_stream_test/opt_code_page.dart';
 import 'package:shwe_stream_test/package_get_service.dart';
 import 'package:shwe_stream_test/video_player.dart';
-
 
 void main() {
   //SystemChrome.setEnabledSystemUIOverlays([]);
@@ -11,7 +11,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  MaterialColor colorCustom = MaterialColor(0xffc030b9, color);
+  MaterialColor colorCustom = MaterialColor(0xffe64a8b, color);
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +19,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Shwe Stream Login",
       theme: ThemeData(primarySwatch: colorCustom),
+      // Start the app with the "/" named route. In this case, the app starts
+      // on the FirstScreen widget.
+      initialRoute: '/',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/homepage': (context) => HomePage(),
+        '/optpage': (context) => OPTCodePage(),
+        '/package': (context) => PackageGetService(),
+      },
       home: LoginPage(),
     );
   }

@@ -59,7 +59,7 @@ class _MoviesDetailsState extends State<MoviesDetails>
       child: Material(
         elevation: 5.0,
         borderRadius: BorderRadius.circular(30.0),
-        color: Color(0xffc030b9),
+        color: Color(0xffe64a8b),
         child: Container(
           child: MaterialButton(
             minWidth: MediaQuery.of(context).size.width,
@@ -109,13 +109,13 @@ class _MoviesDetailsState extends State<MoviesDetails>
         padding: EdgeInsets.fromLTRB(8, 8, 0, 8),
         child: new TabBar(
           controller: _tabController,
-          unselectedLabelColor: Color(0xffc030b9),
+          unselectedLabelColor: Color(0xffe64a8b),
           indicatorSize: TabBarIndicatorSize.tab,
           indicator: BoxDecoration(
               gradient: LinearGradient(
                   colors: [Color(0xfff8bbd0), Color(0xfff48fb1)]),
               borderRadius: BorderRadius.circular(50),
-              color: Color(0xffc030b9)),
+              color: Color(0xffe64a8b)),
           labelPadding: EdgeInsets.symmetric(horizontal: 10.0),
           onTap: (index) {
             if (index == 0) {

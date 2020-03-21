@@ -28,7 +28,7 @@ class RulesAndQuestionBottomBar extends StatelessWidget{
               },
               child: Text(
                 "|",
-                style: TextStyle(color: Color(0xffd83da3)),
+                style: TextStyle(color: Color(0xffe64a8b)),
               ),
             ),
             new GestureDetector(

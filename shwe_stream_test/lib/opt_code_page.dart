@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shwe_stream_test/custom_rounded_shape_button.dart';
 import 'package:shwe_stream_test/home_page.dart';
 import 'package:shwe_stream_test/package_get_service.dart';
 import 'package:shwe_stream_test/rule%20_question_bottom_app_bar.dart';
@@ -31,7 +32,8 @@ class _OPTCodePageState extends State<OPTCodePage> {
     final confirmButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xffc030b9),
+
+      color: Color(0xffe64a8b),
       child: MaterialButton(
         minWidth: MediaQuery
             .of(context)
@@ -80,13 +82,17 @@ class _OPTCodePageState extends State<OPTCodePage> {
                   SizedBox(
                     height: 15.0,
                   ),
-                  confirmButton,
+                  Container(
+                    height: 50,
+                    child: CustomRoundedShapeButton(
+                        btnText: "အတည်ပြုမည်", navigatePage: "/homepage"),
+                  ),
                   Container(
                     padding: const EdgeInsets.all(16.0),
                     alignment: Alignment.centerRight,
                     child: Text(
                       "ကုဒ်ပြန်ယူရန် ( 2:30) မိနစ်",
-                      style: TextStyle(fontSize: 15, color: Color(0xffd83da3)),
+                      style: TextStyle(fontSize: 15, color: Color(0xffe64a8b)),
                     ),
                   ),
                 ],

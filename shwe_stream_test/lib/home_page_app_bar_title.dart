@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class HomePageAppBar extends StatelessWidget{
+class HomePageAppBarTitle extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

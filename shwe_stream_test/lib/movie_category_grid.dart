@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shwe_stream_test/base_app_bar.dart';
 import 'package:shwe_stream_test/movies_details.dart';
 
 class MovieCategoryGrid extends StatelessWidget {
@@ -31,8 +32,10 @@ class MovieCategoryGrid extends StatelessWidget {
     double cardWidth = MediaQuery.of(context).size.width / 3.3;
     double cardHeight = MediaQuery.of(context).size.height / 4.5;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title, style: TextStyle(fontSize: 18)),
+      appBar: BaseAppBar(
+        title: Text(title),
+        appBar: AppBar(),
+        widgets: <Widget>[Icon(Icons.more_vert)],
       ),
       body: Container(
         padding: EdgeInsets.all(8.0),
