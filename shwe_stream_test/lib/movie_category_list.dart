@@ -7,7 +7,7 @@ class MovieCategoryList extends StatelessWidget {
 
   final String title;
 
-  Container MoviesCategory(String movieLogo, String movieName) {
+  /*Container MoviesCategory(String movieLogo, String movieName) {
     return Container(
         //margin: EdgeInsets.fromLTRB(4, 4, 0, 0),
         child: Column(
@@ -35,27 +35,30 @@ class MovieCategoryList extends StatelessWidget {
           ],
         )
     );
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
     var moviesItemList = ListView.builder(
       shrinkWrap: true,
-     scrollDirection: Axis.horizontal,
+      scrollDirection: Axis.horizontal,
       itemCount: 15,
       itemBuilder: (BuildContext context, int index) => Material(
         child: InkWell(
-          onTap: (){
-            Navigator.push(
-                context,
+          onTap: () {
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => MoviesDetails()));
           },
-          child: Container(
-            margin: EdgeInsets.fromLTRB(4, 0, 0, 4),
-            child: Card(
-              child:  MoviesCategory("assets/movieposter1.jpg", "Vip"),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(2.0, 0, 2.0, 0),
+            child: Image.asset(
+              "assets/movieposter1.jpg",
+              height: 150.0,
+              width: 115.0,
+              fit: BoxFit.fill,
             ),
           ),
+          //child:  MoviesCategory("assets/movieposter1.jpg", "Vip"),
         ),
       ),
     );
@@ -104,7 +107,7 @@ class MovieCategoryList extends StatelessWidget {
 
     return Container(
       //margin: EdgeInsets.fromLTRB(4, 0, 4, 0),
-      height: 230,
+      height: 200,
       child: moviesCategory,
     );
   }

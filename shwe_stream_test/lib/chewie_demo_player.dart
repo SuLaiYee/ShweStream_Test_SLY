@@ -48,7 +48,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
       //aspectRatio: 3 / 2,
       autoPlay: false,
       looping: false,
-      allowFullScreen: false,
+      allowFullScreen: true,
       allowMuting: false,
       //showControlsOnInitialize: false,
       //isLive: false,

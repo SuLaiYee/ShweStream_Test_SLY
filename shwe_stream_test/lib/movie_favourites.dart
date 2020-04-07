@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shwe_stream_test/base_app_bar.dart';
 import 'package:shwe_stream_test/movies_details.dart';
 
-class MovieCategoryGrid extends StatelessWidget {
-  MovieCategoryGrid({this.title});
+class MovieFavouritesList extends StatelessWidget {
+  MovieFavouritesList({this.title});
 
   final String title;
 
@@ -15,14 +15,6 @@ class MovieCategoryGrid extends StatelessWidget {
     "assets/movieposter5.jpg",
     "assets/movieposter6.jpg",
     "assets/movieposter7.jpg",
-    "assets/movieposter4.jpg",
-    "assets/movieposter2.jpg",
-    "assets/movieposter3.jpg",
-    "assets/movieposter6.jpg",
-    "assets/movieposter5.jpg",
-    "assets/movieposter1.jpg",
-    "assets/movieposter7.jpg",
-    "assets/movieposter4.jpg"
   ];
 
   @override
@@ -33,12 +25,12 @@ class MovieCategoryGrid extends StatelessWidget {
     double cardHeight = MediaQuery.of(context).size.height / 4.8;
     return Scaffold(
       appBar: BaseAppBar(
-        title: Text(title),
+        title: Text(title,style: TextStyle(fontSize: 18)),
         appBar: AppBar(),
         widgets: <Widget>[Icon(Icons.more_vert)],
       ),
       body: Container(
-        padding: EdgeInsets.fromLTRB(8.0,4,4,4),
+        padding: EdgeInsets.all(8.0),
         child: GridView.builder(
           itemCount: images.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

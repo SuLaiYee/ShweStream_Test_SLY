@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:chewie/chewie.dart';
 import 'package:chewie/src/chewie_player.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:shwe_stream_test/download_dialog.dart';
 import 'package:shwe_stream_test/movie_ep_card.dart';
 import 'package:shwe_stream_test/movies_description.dart';
+import 'package:shwe_stream_test/shwestream_video_player.dart';
 import 'package:shwe_stream_test/snack_bar.dart';
-import 'package:shwe_stream_test/video_player.dart';
+import 'package:shwe_stream_test/chewie_demo_player.dart';
 import 'package:video_player/video_player.dart';
 
 class MoviesDetails extends StatefulWidget {
@@ -32,7 +34,7 @@ class _MoviesDetailsState extends State<MoviesDetails>
 
   @override
   void initState() {
-    _tabController = new TabController(length: 3, vsync: this);
+    _tabController = new TabController(length: 4, vsync: this);
     _tabController.addListener(_pressed);
     super.initState();
   }
@@ -55,33 +57,71 @@ class _MoviesDetailsState extends State<MoviesDetails>
   @override
   Widget build(BuildContext context) {
     final playButton = Container(
-      margin: EdgeInsets.fromLTRB(10, 16, 10, 4),
-      child: Material(
-        elevation: 5.0,
-        borderRadius: BorderRadius.circular(30.0),
-        color: Color(0xffe64a8b),
-        child: Container(
-          child: MaterialButton(
-            minWidth: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.all(8.0),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ChewieDemo()));
-            },
+      margin: EdgeInsets.fromLTRB(16, 16, 16,0),
+      height: 50,
+
+      /*RaisedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, widget.navigatePage);
+        },
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+        padding: EdgeInsets.all(0.0),
+        child: Ink(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [Color(0xff9c1dda), Color(0xffee498f)],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+              borderRadius: BorderRadius.circular(30.0)
+          ),
+          child: Container(
+            //constraints: BoxConstraints(maxWidth: 800.0, minHeight: 50.0),
+            alignment: Alignment.center,
             child: Text(
-              "PLAY".toUpperCase(),
+              widget.btnText,
               textAlign: TextAlign.center,
-              style: loginPageStyle.copyWith(
+              style: TextStyle(
                 color: Colors.white,
-                fontSize: 18,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
         ),
-      ),
-    );
+      );*/
+
+      child: RaisedButton(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+            padding: EdgeInsets.all(0.0),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChewieDemo()));
+            },
+            child: Ink(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [Color(0xff9c1dda), Color(0xffee498f)],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                  borderRadius: BorderRadius.circular(30.0)
+              ),
+            child: Container(
+              //constraints: BoxConstraints(maxWidth: 800.0, minHeight: 50.0),
+              alignment: Alignment.center,
+              child: Text(
+                "PLAY".toUpperCase(),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            ),
+          ),
+      );
 
     BoxDecoration customGreyShadowBox() {
       return BoxDecoration(
@@ -106,7 +146,7 @@ class _MoviesDetailsState extends State<MoviesDetails>
         height: 70,
         decoration: customGreyShadowBox(),
         margin: EdgeInsets.fromLTRB(12, 4, 12, 0),
-        padding: EdgeInsets.fromLTRB(8, 8, 0, 8),
+        padding: EdgeInsets.fromLTRB(2, 8, 2, 8),
         child: new TabBar(
           controller: _tabController,
           unselectedLabelColor: Color(0xffe64a8b),
@@ -128,10 +168,13 @@ class _MoviesDetailsState extends State<MoviesDetails>
               _isVisibleVideo = false;
               _isVisibleFavouite = false;
             }
-            if (index == 2) {
+            if (index == 3) {
               _isVisibleFavouite = true;
               _isVisibleVideo = false;
               _isVisibleActor = false;
+            }
+            if(index == 2){
+              showAlertDialog(context);
             }
           },
           tabs: [
@@ -181,6 +224,23 @@ class _MoviesDetailsState extends State<MoviesDetails>
                   children: <Widget>[
                     Expanded(
                         child: Image.asset(
+                          "assets/down_pink.png",
+                          fit: BoxFit.fill,
+                        )),
+                    Expanded(
+                        child:
+                        Text('ဒေါင်းလုပ်', style: TextStyle(fontSize: 13))),
+                  ],
+                ),
+              ),
+            ),
+            new Tab(
+              child: Align(
+                alignment: Alignment.center,
+                child: Column(
+                  children: <Widget>[
+                    Expanded(
+                        child: Image.asset(
                           "assets/heart_outline.png",
                       fit: BoxFit.fill,
                     )),
@@ -199,13 +259,11 @@ class _MoviesDetailsState extends State<MoviesDetails>
     Widget showSimpleVideo() {
       return Visibility(
         child: new Container(
-          width: MediaQuery.of(context).size.width,
+         // width: MediaQuery.of(context).size.width,
           height: 200,
-          margin: EdgeInsets.fromLTRB(12, 0, 12, 8),
-          child: new SizedBox(
-            child: ChewieDemo(),
+          margin: EdgeInsets.fromLTRB(20, 8, 0, 8),
+          child: Center(child: VideoPlayerScreen()),
           ),
-        ),
         visible: _isVisibleVideo,
       );
     }
@@ -238,7 +296,7 @@ class _MoviesDetailsState extends State<MoviesDetails>
             ),
             child: Center(
               child: Text(
-                'Movie Name',
+                ' ',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
@@ -257,7 +315,7 @@ class _MoviesDetailsState extends State<MoviesDetails>
                   ),
                   flex: 7,
                 ),
-                Expanded(
+                /*Expanded(
                   child: IconButton(
                     icon: Icon(
                       Icons.search,
@@ -269,11 +327,11 @@ class _MoviesDetailsState extends State<MoviesDetails>
                     },
                   ),
                   flex: 2,
-                ),
+                ),*/
                 Expanded(
                   child: IconButton(
                     icon: Icon(
-                      Icons.notifications_none,
+                      Icons.more_vert,
                       color: Colors.white,
                     ),
                     tooltip: 'Notification',

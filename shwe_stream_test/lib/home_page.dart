@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:shwe_stream_test/base_app_bar.dart';
 import 'package:shwe_stream_test/home_menu_drawer.dart';
-import 'package:shwe_stream_test/home_page_app_bar_title.dart';
 import 'package:shwe_stream_test/movie_category_list.dart';
-
 import 'adv_promotion.dart';
 
 class HomePage extends StatefulWidget {
@@ -29,8 +27,7 @@ class CustomPopupMenu {
 
 List<CustomPopupMenu> choices = <CustomPopupMenu>[
   CustomPopupMenu(title: 'Home', icon: Icons.home),
-  CustomPopupMenu(title: 'Bookmarks', icon: Icons.bookmark),
-  CustomPopupMenu(title: 'Settings', icon: Icons.settings),
+  CustomPopupMenu(title: 'Profile', icon: Icons.bookmark),
 ];
 
 class _HomePageState extends State<HomePage> {
@@ -64,41 +61,22 @@ class _HomePageState extends State<HomePage> {
     );
 
     return new Scaffold(
-        appBar: new AppBar(
-            flexibleSpace: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: <Color>[Color(0xff9c1dda), Color(0xffee498f)]),
-              ),
-            ),
-            title: HomePageAppBarTitle(),
-            actions: <Widget>[
-              PopupMenuButton<CustomPopupMenu>(
-                elevation: 3.2,
-                initialValue: choices[1],
-                onCanceled: () {
-                  print('You have not chossed anything');
-                },
-                tooltip: 'This is tooltip',
-                onSelected: _select,
-                itemBuilder: (BuildContext context) {
-                  return choices.map((CustomPopupMenu choice) {
-                    return PopupMenuItem<CustomPopupMenu>(
-                      value: choice,
-                      child: Text(choice.title),
-                    );
-                  }).toList();
-                },
-              )
-            ],
-            backgroundColor: Color(0xffc030b9)),
+        appBar: BaseAppBar(
+          title: Image.asset(
+            'assets/landing_tittle.png',
+            fit: BoxFit.contain,
+            height: 33,
+            alignment: Alignment.centerLeft,
+          ),
+          appBar: AppBar(),
+          widgets: <Widget>[Icon(Icons.more_vert)],
+        ),
         drawer: HomeMenuDrawer(),
         body: Container(
             child: ListView(
+          physics: const AlwaysScrollableScrollPhysics(),
           children: <Widget>[
-            autoPlayDemo,
+            Container(color: Color(0xFFD6D6D6), child: autoPlayDemo),
             ADPromotion(),
             MovieCategoryList(title: "မြန်မာရုပ်ရှင်ဇာတ်ကားကောင်းများ"),
             MovieCategoryList(title: "ကိုရီးယားဒရာမာဇာတ်လမ်းတွဲများ"),
@@ -108,29 +86,5 @@ class _HomePageState extends State<HomePage> {
             MovieCategoryList(title: "အငြိမ့်နှင့်နှစ်ပါးသွား"),
           ],
         )));
-  }
-}
-
-class SelectedOption extends StatelessWidget {
-  CustomPopupMenu choice;
-
-  SelectedOption({Key key, this.choice}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Icon(choice.icon, size: 140.0, color: Colors.white),
-            Text(
-              choice.title,
-              style: TextStyle(color: Colors.white, fontSize: 30),
-            )
-          ],
-        ),
-      ),
-    );
   }
 }
