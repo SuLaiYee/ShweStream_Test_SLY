@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shwe_stream_test/app_constants.dart';
 import 'package:shwe_stream_test/data_search.dart';
+import 'package:shwe_stream_test/home_page.dart';
 import 'package:shwe_stream_test/user_profile.dart';
 enum ConfirmAction { CANCEL, ACCEPT }
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -84,14 +85,50 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: <Widget>[
         PopupMenuButton<String>(
           onSelected: choiceAction,
-          itemBuilder: (BuildContext context) {
-            return AppConstants.homeMenu.map((String choice) {
-              return PopupMenuItem<String>(
-                value: choice,
-                child: Text(choice),
-              );
-            }).toList();
-          },
+          itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+            PopupMenuItem<String>(
+              value: "User Profile",
+              child: Container(
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Image.asset(
+                          'assets/user_profile.png',
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 4.0),
+                          child: Text("ကိုယ်ပိုင် အချက်အလက်", style: Theme.of(context).textTheme.body1),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+            PopupMenuItem<String>(
+              value: 'Logout',
+              child: Container(
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Image.asset(
+                          'assets/log_out.png',
+                        ),
+                         Padding(
+                           padding: const EdgeInsets.only(left: 4.0),
+                           child: Text('အကောင့်မှ ထွက်ရန်', style: Theme.of(context).textTheme.body1),
+                         ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ],
     );

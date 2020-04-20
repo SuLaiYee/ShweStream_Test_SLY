@@ -287,7 +287,7 @@ class _MoviesDetailsState extends State<MoviesDetails>
       return Stack(
         children: <Widget>[
           Container(
-            height: 400,
+            height: 300,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: new ExactAssetImage('assets/movieposter7.jpg'),

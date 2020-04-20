@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shwe_stream_test/adv_promotion_detail_page.dart';
 
 class ADPromotion extends StatelessWidget {
   @override
@@ -7,7 +8,8 @@ class ADPromotion extends StatelessWidget {
       height: 55,
       child: FlatButton(
         onPressed: () {
-          /*Navigator.pushNamed(context, widget.navigatePage);*/
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => AdvPromotionDetail(title: "To Get Gold Coins",)));
         },
         padding: EdgeInsets.all(0.0),
         child: Ink(

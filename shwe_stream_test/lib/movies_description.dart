@@ -33,8 +33,9 @@ class _DescriptionTextWidgetState extends State<DescriptionTextWidget> {
   Widget build(BuildContext context) {
     return Container(
       padding: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-      margin: EdgeInsets.fromLTRB(0, 4, 0, 4),
+      margin: EdgeInsets.fromLTRB(0, 4, 0, 0),
       child: Card(
+        elevation: 4,
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: secondHalf.isEmpty

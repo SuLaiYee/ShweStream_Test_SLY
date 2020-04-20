@@ -35,7 +35,7 @@ showAlertDialog(BuildContext context) {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
-            width: 180,
+            width: 200,
             height: 40,
             margin: EdgeInsets.only(bottom:8.0),
             decoration: BoxDecoration(
@@ -61,7 +61,7 @@ showAlertDialog(BuildContext context) {
             ),
           ),
           Container(
-            width: 180,
+            width: 200,
             height: 40,
             margin: EdgeInsets.only(bottom: 8.0),
             decoration: BoxDecoration(
@@ -87,7 +87,7 @@ showAlertDialog(BuildContext context) {
             ),
           ),
           Container(
-            width: 180,
+            width: 200,
             height: 40,
             margin: EdgeInsets.only(bottom:8.0),
             decoration: BoxDecoration(
@@ -113,7 +113,7 @@ showAlertDialog(BuildContext context) {
             ),
           ),
           Container(
-            width: 180,
+            width: 200,
             height: 40,
             margin: EdgeInsets.only(bottom:8.0),
             decoration: BoxDecoration(
@@ -151,7 +151,7 @@ showAlertDialog(BuildContext context) {
     context: context,
       builder: (_) => Center( // Aligns the container to center
           child: Container( // A simplified version of dialog.
-            width: 300,
+            width: 330,
             child: alert,
           )
       ),

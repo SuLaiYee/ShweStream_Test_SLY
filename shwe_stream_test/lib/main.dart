@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shwe_stream_test/home_page.dart';
 import 'package:shwe_stream_test/login_page.dart';
+import 'package:shwe_stream_test/movie_category_grid.dart';
+import 'package:shwe_stream_test/movie_category_list.dart';
 import 'package:shwe_stream_test/opt_code_page.dart';
 import 'package:shwe_stream_test/package_get_service.dart';
 import 'package:shwe_stream_test/chewie_demo_player.dart';
@@ -26,20 +28,21 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
 
-          '/loginscreen': (BuildContext context) => new LoginPage(),
+       //   '/loginscreen': (BuildContext context) => new LoginPage(),
 
         // When navigating to the "/" route, build the FirstScreen widget.
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/homepage': (context) => HomePage(),
         '/optpage': (context) => OPTCodePage(),
         '/package': (context) => PackageGetService(),
+        '/moviecategory': (BuildContext context) => new MovieCategoryGrid(title: "Movie Category"),
       },
-      home: SplashScreen(),
+      home: LoginPage(),
     );
   }
 }
 
-class SplashScreen extends StatefulWidget {
+/*class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => new _SplashScreenState();
 }
@@ -76,7 +79,7 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
     );
   }
-}
+}*/
 
 Map<int, Color> color = {
   50: Color.fromRGBO(136, 14, 79, .1),

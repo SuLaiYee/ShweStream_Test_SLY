@@ -21,12 +21,11 @@ class HomeMenuDrawer extends StatelessWidget {
           new DrawerHeader(
               decoration: BoxDecoration(color: Color(0xffD6D6D6)),
               child: Container(
-                  padding: EdgeInsets.only(left: 18.0),
                   child: SizedBox(
                     child: Image.asset(
-                      "assets/drawer_logo_1.png",
-                      width: 100,
-                      height: 100,
+                      "assets/top_logo.png",
+                     /* width: 100,
+                      height: 100,*/
                     ),
                   ))),
           new ListTile(

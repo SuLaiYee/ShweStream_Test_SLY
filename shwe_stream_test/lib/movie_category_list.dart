@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shwe_stream_test/movie_category_grid.dart';
 import 'package:shwe_stream_test/movies_details.dart';
+import 'package:shwe_stream_test/process_dialog.dart';
 
 class MovieCategoryList extends StatelessWidget {
   MovieCategoryList({this.title});
@@ -36,6 +37,8 @@ class MovieCategoryList extends StatelessWidget {
         )
     );
   }*/
+
+  final GlobalKey<State> _keyLoader = new GlobalKey<State>();
 
   @override
   Widget build(BuildContext context) {
@@ -78,11 +81,12 @@ class MovieCategoryList extends StatelessWidget {
           ),
           new GestureDetector(
             onTap: () {
-              Navigator.push(
+              _handleSubmit(context);
+              /*Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) =>
-                          MovieCategoryGrid(title: "Movies Category")));
+                          MovieCategoryGrid(title: "Movies Category")));*/
             },
             child: Text(
               "အားလုံး >>",
@@ -110,5 +114,23 @@ class MovieCategoryList extends StatelessWidget {
       height: 200,
       child: moviesCategory,
     );
+
+
+  }
+
+  Future<void> _handleSubmit(BuildContext context) async {
+    try {
+
+      Dialogs.showLoadingDialog(context, _keyLoader);//invoking login
+      await Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) =>
+                  MovieCategoryGrid(title: "Movies Category")));
+      Navigator.of(_keyLoader.currentContext,rootNavigator: true).pop();//close the dialoge
+      Navigator.pushReplacementNamed(context, "/moviecategory");
+    } catch (error) {
+      print(error);
+    }
   }
 }

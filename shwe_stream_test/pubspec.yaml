@@ -77,12 +77,14 @@ flutter:
     - assets/load_96.png
     - assets/loading_96.png
     - assets/video_error.png
-    - assets/video_notfound.png
     - assets/user_profile.png
     - assets/play.png
     - assets/remove_service.png
     - assets/noti_pink.png
     - assets/noti_stop_pink.png
+    - assets/user_profile.png
+    - assets/log_out.png
+    - assets/top_logo.png
 
 
 
