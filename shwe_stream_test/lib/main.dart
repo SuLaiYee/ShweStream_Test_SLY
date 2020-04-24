@@ -8,9 +8,21 @@ import 'package:shwe_stream_test/movie_category_list.dart';
 import 'package:shwe_stream_test/opt_code_page.dart';
 import 'package:shwe_stream_test/package_get_service.dart';
 import 'package:shwe_stream_test/chewie_demo_player.dart';
+import 'dart:async';
+import 'dart:io';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+void _enablePlatformOverrideForDesktop() {
+  if (!kIsWeb && (Platform.isWindows || Platform.isLinux)) {
+    debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+  }
+}
 
 void main() {
   //SystemChrome.setEnabledSystemUIOverlays([]);
+  _enablePlatformOverrideForDesktop();
   runApp(MyApp());
 }
 
@@ -37,7 +49,7 @@ class MyApp extends StatelessWidget {
         '/package': (context) => PackageGetService(),
         '/moviecategory': (BuildContext context) => new MovieCategoryGrid(title: "Movie Category"),
       },
-      home: LoginPage(),
+      home: HomePage(),
     );
   }
 }

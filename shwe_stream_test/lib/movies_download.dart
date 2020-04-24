@@ -25,15 +25,37 @@ class MoviesDownloadPage extends StatefulWidget {
 }
 
 class _MoviesDownloadPageState extends State<MoviesDownloadPage> {
+  bool isPressed = false;
   TextStyle moviesDownloadPageStyle =
       TextStyle(fontFamily: 'Montserrat', fontSize: 15.0);
+
+  Icon _affectedByStateChange = new Icon(
+    Icons.play_arrow,
+    color: Colors.grey,
+  );
+
+  _pressed() {
+    var newVal = true;
+    if(isPressed) {
+      newVal = false;
+    } else {
+      newVal = true;
+    }
+
+    setState((){
+      isPressed = newVal;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       appBar: BaseAppBar(
-        title: Text("ဒေါင်းလုပ်", style: TextStyle(fontSize: 18),),
+        title: Text(
+          "ဒေါင်းလုပ်",
+          style: TextStyle(fontSize: 18),
+        ),
         appBar: AppBar(),
         widgets: <Widget>[Icon(Icons.more_vert)],
       ),
@@ -50,6 +72,14 @@ class _MoviesDownloadPageState extends State<MoviesDownloadPage> {
   }
 
   _buildListItem(MoviesDownloadInfo movies, BuildContext context) {
+   /* _thisWillAffectTheState() {
+      _affectedByStateChange = new Icon(Icons.pause, color: Colors.blue);
+    }
+
+    _thisWillAlsoAffectTheState() {
+      _affectedByStateChange = new Icon(Icons.favorite, color: Colors.red);
+    }*/
+
     Widget progressBar = Container(
       margin: EdgeInsets.fromLTRB(8, 4, 8, 4),
       child: Row(
@@ -58,39 +88,64 @@ class _MoviesDownloadPageState extends State<MoviesDownloadPage> {
             child: Container(
               margin: EdgeInsets.only(bottom: 20.0),
               child: LinearProgressIndicator(
-                backgroundColor: Colors.red,
+                backgroundColor: Colors.pinkAccent,
                 valueColor: AlwaysStoppedAnimation<Color>(
-                  Color(0xfff48fb1),
+                  Color(0xfad48fb1),
                 ),
                 value: 0.8,
               ),
             ),
+            flex: 5,
           ),
-          Column(
-            children: <Widget>[
-              Container(
-                //padding: EdgeInsets.only(top: 12),
-                child: Image.asset(
-                  "assets/play.png",
-                  fit: BoxFit.fill,
+          Expanded(
+            child: Column(
+              children: <Widget>[
+                new IconButton(
+                  icon: new Icon(isPressed ? Icons.play_arrow:Icons.pause),
+                  onPressed:() => _pressed(),
+                  iconSize: 25.0,
+                  color: Colors.pink,
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom:4.0),
-                child: Text(
-                  " ",
-                  style: TextStyle(fontSize: 13),
-                  textAlign: TextAlign.start,
+
+               /* InkWell(
+                  child: Container(
+                    //padding: EdgeInsets.only(top: 12),
+                    child: _affectedByStateChange,
+                    *//*Image.asset(
+                      "assets/play.png",
+                      fit: BoxFit.fill,
+                    ),*//*
+                  ),
+                  onTap: () {
+                    setState(() {
+                      if()
+                      _thisWillAffectTheState();
+                    });
+                  },
+                  onLongPress: () {
+                    setState(() {
+                      _thisWillAlsoAffectTheState();
+                    });
+                  },
+                ),*/
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 4.0),
+                  child: Text(
+                    " ",
+                    style: TextStyle(fontSize: 13),
+                    textAlign: TextAlign.start,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
+            flex: 1,
           )
         ],
       ),
     );
 
     return Container(
-      margin: EdgeInsets.fromLTRB(8, 4, 8, 4),
+      margin: EdgeInsets.fromLTRB(8, 0, 8, 0),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
@@ -106,7 +161,7 @@ class _MoviesDownloadPageState extends State<MoviesDownloadPage> {
                   bottomLeft: Radius.circular(10.0)),
               child: Image.asset(
                 movies.movImage,
-                height: 120.0,
+                height: 130.0,
                 width: 110.0,
                 fit: BoxFit.fill,
               ),
@@ -118,21 +173,21 @@ class _MoviesDownloadPageState extends State<MoviesDownloadPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Align(
-                    alignment:Alignment.topRight,
+                    alignment: Alignment.topRight,
                     child: Container(
-                      width: 30,
-                      height: 30,
-                      padding: EdgeInsets.all(4.0),
-                      margin: EdgeInsets.fromLTRB(0, 8, 8, 4),
+                      width: 25,
+                      height: 25,
+                      margin: EdgeInsets.only(right: 12),
+                      padding: EdgeInsets.all(2.0),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
                           border: Border.all(color: Colors.grey, width: 1)),
                       child: SizedBox(
-                            child: Image.asset(
-                              "assets/remove_service.png",
-                            ),
-                          ),
+                        child: Image.asset(
+                          "assets/remove_service.png",
+                        ),
                       ),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(8, 0, 0, 4),

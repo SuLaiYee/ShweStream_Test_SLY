@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shwe_stream_test/download_dialog.dart';
 
 class MovieEpCard extends StatelessWidget {
   MovieEpCard({this.title});
@@ -61,19 +62,22 @@ class MovieEpCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  width: 35,
-                  height: 35,
-                  padding: EdgeInsets.all(4.0),
-                  margin: EdgeInsets.fromLTRB(16,20,16,16),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      border: Border.all(color: Colors.grey, width: 1)),
-                  child: SizedBox(
-                    child: Image.asset(
-                      "assets/down_pink.png",
+                InkWell(
+                  child: Container(
+                    width: 35,
+                    height: 35,
+                    padding: EdgeInsets.all(4.0),
+                    margin: EdgeInsets.fromLTRB(16,20,16,16),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        border: Border.all(color: Colors.grey, width: 1)),
+                    child: SizedBox(
+                      child: Image.asset(
+                        "assets/down_pink.png",
+                      ),
                     ),
                   ),
+                  onTap:(){ showAlertDialog(context);}
                 ),
 
                 //download with image and text design

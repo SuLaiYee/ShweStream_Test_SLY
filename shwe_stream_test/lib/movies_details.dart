@@ -31,11 +31,12 @@ class _MoviesDetailsState extends State<MoviesDetails>
   bool _isVisibleVideo = true;
   bool _isVisibleActor = false;
   bool _isVisibleFavouite = false;
+  int tabIndex = 0;
 
   @override
   void initState() {
     _tabController = new TabController(length: 4, vsync: this);
-    _tabController.addListener(_pressed);
+    //_tabController.addListener(_pressed);
     super.initState();
   }
 
@@ -47,17 +48,15 @@ class _MoviesDetailsState extends State<MoviesDetails>
     } else {
       newVal = true;
     }
-
     setState(() {
       isPressed = newVal;
-      //SnackBarPage(title: "Successful Add Favourite");
     });
   }
 
   @override
   Widget build(BuildContext context) {
     final playButton = Container(
-      margin: EdgeInsets.fromLTRB(16, 16, 16,0),
+      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
       height: 50,
 
       /*RaisedButton(
@@ -91,37 +90,37 @@ class _MoviesDetailsState extends State<MoviesDetails>
       );*/
 
       child: RaisedButton(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
-            padding: EdgeInsets.all(0.0),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ChewieDemo()));
-            },
-            child: Ink(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [Color(0xff9c1dda), Color(0xffee498f)],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
-                  borderRadius: BorderRadius.circular(30.0)
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+        padding: EdgeInsets.all(0.0),
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => ChewieDemo()));
+        },
+        child: Ink(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xff9c1dda), Color(0xffee498f)],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
               ),
-            child: Container(
-              //constraints: BoxConstraints(maxWidth: 800.0, minHeight: 50.0),
-              alignment: Alignment.center,
-              child: Text(
-                "PLAY".toUpperCase(),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
+              borderRadius: BorderRadius.circular(30.0)),
+          child: Container(
+            //constraints: BoxConstraints(maxWidth: 800.0, minHeight: 50.0),
+            alignment: Alignment.center,
+            child: Text(
+              "PLAY".toUpperCase(),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
               ),
-            ),
             ),
           ),
-      );
+        ),
+      ),
+    );
 
     BoxDecoration customGreyShadowBox() {
       return BoxDecoration(
@@ -151,31 +150,20 @@ class _MoviesDetailsState extends State<MoviesDetails>
           controller: _tabController,
           unselectedLabelColor: Color(0xffe64a8b),
           indicatorSize: TabBarIndicatorSize.tab,
+          /* indicator: BoxDecoration(color: setColor(tabIndex)),*/
           indicator: BoxDecoration(
               gradient: LinearGradient(
-                  colors: [Color(0xfff8bbd0), Color(0xfff48fb1)]),
+                  colors: tabIndex != 3
+                      ? [Color(0xfff8bbd0), Color(0xfff48fb1)]
+                      : [Color(0xfffffff), Color(0xfffffff)]),
               borderRadius: BorderRadius.circular(50),
               color: Color(0xffe64a8b)),
           labelPadding: EdgeInsets.symmetric(horizontal: 10.0),
           onTap: (index) {
-            if (index == 0) {
-              _isVisibleVideo = true;
-              _isVisibleActor = false;
-              _isVisibleFavouite = false;
-            }
-            if (index == 1) {
-              _isVisibleActor = true;
-              _isVisibleVideo = false;
-              _isVisibleFavouite = false;
-            }
-            if (index == 3) {
-              _isVisibleFavouite = true;
-              _isVisibleVideo = false;
-              _isVisibleActor = false;
-            }
-            if(index == 2){
-              showAlertDialog(context);
-            }
+            setState(() {
+              tabIndex = index;
+              setIndexAction(tabIndex);
+            });
           },
           tabs: [
             new Tab(
@@ -224,31 +212,44 @@ class _MoviesDetailsState extends State<MoviesDetails>
                   children: <Widget>[
                     Expanded(
                         child: Image.asset(
-                          "assets/down_pink.png",
-                          fit: BoxFit.fill,
-                        )),
+                      "assets/down_pink.png",
+                      fit: BoxFit.fill,
+                    )),
                     Expanded(
                         child:
-                        Text('ဒေါင်းလုပ်', style: TextStyle(fontSize: 13))),
+                            Text('ဒေါင်းလုပ်', style: TextStyle(fontSize: 13))),
                   ],
                 ),
               ),
             ),
             new Tab(
-              child: Align(
-                alignment: Alignment.center,
-                child: Column(
-                  children: <Widget>[
-                    Expanded(
-                        child: Image.asset(
-                          "assets/heart_outline.png",
+              child: Column(
+                children: <Widget>[
+                  Expanded(
+                      child: GestureDetector(
+                          onTap: () {_pressed();}, child: new IconTheme(
+                        data: new IconThemeData(
+                            color: Color(0xffe64a8b)),
+                        child: new Icon(isPressed? Icons.favorite:Icons.favorite_border),
+                      ),
+                        /*Icon(isPressed? Icons.favorite:Icons.favorite_border), */)
+                      /* child:  Container(
+                         padding: EdgeInsets.all(0.0),
+                         child: new IconButton(
+                              icon: new Icon(isPressed? Icons.favorite:Icons.favorite_border),
+                              onPressed:() => _pressed(),
+                              iconSize: 28.0,
+                              color: Colors.pink,
+                      */ /*Image.asset(
+                            "assets/heart_outline.png",
                       fit: BoxFit.fill,
-                    )),
-                    Expanded(
-                        child:
-                            Text('နှစ်သက်မှု', style: TextStyle(fontSize: 13))),
-                  ],
-                ),
+                    )*/ /*),
+                       ),*/
+                      ),
+                  Expanded(
+                    child: Text('နှစ်သက်မှု', style: TextStyle(fontSize: 13, color: Color(0xffe64a8b))),
+                  ),
+                ],
               ),
             ),
           ],
@@ -259,11 +260,11 @@ class _MoviesDetailsState extends State<MoviesDetails>
     Widget showSimpleVideo() {
       return Visibility(
         child: new Container(
-         // width: MediaQuery.of(context).size.width,
+          // width: MediaQuery.of(context).size.width,
           height: 200,
           margin: EdgeInsets.fromLTRB(20, 8, 0, 8),
           child: Center(child: VideoPlayerScreen()),
-          ),
+        ),
         visible: _isVisibleVideo,
       );
     }
@@ -374,4 +375,47 @@ class _MoviesDetailsState extends State<MoviesDetails>
     // Find the Scaffold in the Widget tree and use it to show a SnackBar!
     _scaffoldKey.currentState.showSnackBar(snackBar);
   }
+
+  setIndexAction(int tabIndex) {
+    if (tabIndex == 0) {
+      //newVal = true;
+      _isVisibleVideo = true;
+      _isVisibleActor = false;
+      _isVisibleFavouite = false;
+    }
+    if (tabIndex == 1) {
+      //newVal = true;
+      _isVisibleActor = true;
+      _isVisibleVideo = false;
+      _isVisibleFavouite = false;
+    }
+    if (tabIndex == 2) {
+      // newVal = true;
+      showAlertDialog(context);
+    }
+    if (tabIndex == 3) {
+      //newVal = true;
+      _isVisibleFavouite = true;
+      _isVisibleVideo = false;
+      _isVisibleActor = false;
+    }
+  }
+/*setColor(int tabIndex) {
+    if (tabIndex == 0) {
+      return [Color(0xfff8bbd0), Color(0xfff48fb1)] ;
+      _isVisibleVideo = true;
+      _isVisibleActor = false;
+      _isVisibleFavouite = false;
+    }
+    if (tabIndex == 1) {
+      return [Color(0xfff8bbd0), Color(0xfff48fb1)] ;
+    }
+    if (tabIndex == 2) {
+      return [Color(0xfff8bbd0), Color(0xfff48fb1)] ;
+    }
+    if (tabIndex == 3) {
+      return [Color(0xffffff), Color(0xffffff)] ;
+    }
+*/
+
 }

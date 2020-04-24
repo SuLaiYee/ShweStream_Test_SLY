@@ -81,6 +81,7 @@ class MovieCategoryList extends StatelessWidget {
           ),
           new GestureDetector(
             onTap: () {
+
               _handleSubmit(context);
               /*Navigator.push(
                   context,
