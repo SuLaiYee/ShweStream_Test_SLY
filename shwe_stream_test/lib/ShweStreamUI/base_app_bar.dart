@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shwe_stream_test/app_constants.dart';
-import 'package:shwe_stream_test/data_search.dart';
-import 'package:shwe_stream_test/home_page.dart';
-import 'package:shwe_stream_test/user_profile.dart';
+import 'package:shwe_stream_test/ShweStreamUI/app_constants.dart';
+import 'package:shwe_stream_test/ShweStreamUI/data_search.dart';
+import 'package:shwe_stream_test/ShweStreamUI/home_page.dart';
+import 'package:shwe_stream_test/ShweStreamUI/user_profile.dart';
 enum ConfirmAction { CANCEL, ACCEPT }
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget title;

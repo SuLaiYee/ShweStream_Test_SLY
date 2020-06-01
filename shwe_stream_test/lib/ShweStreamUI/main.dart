@@ -1,18 +1,12 @@
-import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:shwe_stream_test/home_page.dart';
-import 'package:shwe_stream_test/login_page.dart';
-import 'package:shwe_stream_test/movie_category_grid.dart';
-import 'package:shwe_stream_test/movie_category_list.dart';
-import 'package:shwe_stream_test/opt_code_page.dart';
-import 'package:shwe_stream_test/package_get_service.dart';
-import 'package:shwe_stream_test/chewie_demo_player.dart';
-import 'dart:async';
+import 'package:shwe_stream_test/ShweStreamUI/movie_category_grid.dart';
+import 'package:shwe_stream_test/ShweStreamUI/opt_code_page.dart';
+import 'package:shwe_stream_test/ShweStreamUI/package_get_service.dart';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
+import 'home_page.dart';
 
 void _enablePlatformOverrideForDesktop() {
   if (!kIsWeb && (Platform.isWindows || Platform.isLinux)) {
@@ -53,45 +47,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-/*class SplashScreen extends StatefulWidget {
-  @override
-  _SplashScreenState createState() => new _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  startTime() async {
-    var _duration = new Duration(seconds: 2);
-    return new Timer(_duration, navigationPage);
-  }
-
-  void navigationPage() {
-    Navigator.of(context).pushReplacementNamed('/loginscreen');
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    startTime();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: <Color>[Color(0xff9c1dda), Color(0xffee498f)]),
-        ),
-       child: new Center(
-          child: new Image.asset('assets/landing_tittle.png'),
-        ),
-      ),
-    );
-  }
-}*/
 
 Map<int, Color> color = {
   50: Color.fromRGBO(136, 14, 79, .1),

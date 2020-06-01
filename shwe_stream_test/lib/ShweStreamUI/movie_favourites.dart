@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shwe_stream_test/base_app_bar.dart';
-import 'package:shwe_stream_test/movies_details.dart';
+import 'package:shwe_stream_test/ShweStreamUI/base_app_bar.dart';
+import 'package:shwe_stream_test/ShweStreamUI/movies_details.dart';
 
 class MovieFavouritesList extends StatelessWidget {
   MovieFavouritesList({this.title});

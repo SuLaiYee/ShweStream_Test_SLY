@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shwe_stream_test/PODObject/search_movies_info.dart';
-import 'package:shwe_stream_test/movies_details.dart';
+import 'package:shwe_stream_test/ShweStreamUI/movies_details.dart';
 
 class DataSearch extends SearchDelegate<String> {
   List<SearchMoviesInfo> searchMovies = [
@@ -192,36 +192,5 @@ class DataSearch extends SearchDelegate<String> {
       ),
       itemCount: suggestionList.length,
     );
-
-    /* return ListView.builder(
-      itemBuilder: (context, index) => ListTile(
-        onTap: () {
-          showResults(context);
-
-          *//*Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) =>
-                  MoviesDetails(*//* *//*listWordsDetail: suggestionList[index]*//* *//*),
-            ),
-          );*//*
-        },
-        leading: Icon(Icons.movie),
-        title: RichText(
-          text: TextSpan(
-              text: suggestionList[index].moviesName.substring(0, query.length),
-              style:
-                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-              children: [
-                TextSpan(
-                    text: suggestionList[index]
-                        .moviesName
-                        .substring(query.length),
-                    style: TextStyle(color: Colors.grey))
-              ]),
-        ),
-      ),
-      itemCount: suggestionList.length,
-    );*/
   }
 }

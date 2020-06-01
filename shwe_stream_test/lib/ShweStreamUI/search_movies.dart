@@ -2,7 +2,7 @@ import 'package:flappy_search_bar/flappy_search_bar.dart';
 import 'package:flappy_search_bar/search_bar_style.dart';
 import 'package:flutter/material.dart';
 import 'package:shwe_stream_test/PODObject/search_movies_info.dart';
-import 'package:shwe_stream_test/movies_details.dart';
+import 'package:shwe_stream_test/ShweStreamUI/movies_details.dart';
 
 class SearchMovies extends StatelessWidget {
   SearchMovies({this.title});

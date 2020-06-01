@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shwe_stream_test/adv_promotion_detail_page.dart';
+import 'package:shwe_stream_test/ShweStreamUI/adv_promotion_detail_page.dart';
 
 class ADPromotion extends StatelessWidget {
   @override
@@ -35,29 +35,6 @@ class ADPromotion extends StatelessWidget {
           ),
         ),
       )
-
-
-      /*ButtonTheme(
-        // minWidth: MediaQuery.of(context).size.width,
-        // color: Colors.blue,
-        //width: double.infinity,
-        height: 55,
-        shape: new RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(10.0),
-            side: BorderSide(color: Color(0xff92781e))),
-        child: RaisedButton(
-          onPressed: () {},
-          color: Color(0xfffdc816),
-          textColor: Colors.white,
-          disabledColor: Colors.grey,
-          disabledTextColor: Colors.black,
-          splashColor: Colors.brown,
-          child: Text(
-            "To Win Gold Coin Until 3.3.2020",
-            style: TextStyle(fontSize: 16),
-          ),
-        ),
-      ),*/
     );
   }
 }

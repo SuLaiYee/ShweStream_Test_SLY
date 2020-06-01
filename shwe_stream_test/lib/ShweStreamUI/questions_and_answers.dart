@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shwe_stream_test/base_app_bar.dart';
+import 'package:shwe_stream_test/ShweStreamUI/base_app_bar.dart';
 
-class AdvPromotionDetail extends StatelessWidget {
-  AdvPromotionDetail({this.title});
+class QuestionsAndAnswers extends StatelessWidget {
+  QuestionsAndAnswers({this.title});
 
   final String title;
 
@@ -18,9 +18,9 @@ class AdvPromotionDetail extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.all(8.0),
         child: Text(
-            "To Get Gold Coins"
+          "Question and Answers"
         ),
-      ),
-    );
+        ),
+      );
   }
 }

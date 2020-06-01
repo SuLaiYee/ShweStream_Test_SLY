@@ -1,64 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shwe_stream_test/base_app_bar.dart';
+import 'package:shwe_stream_test/ShweStreamUI/base_app_bar.dart';
 
 class UserProfile extends StatelessWidget {
-  /*final Widget phoneField = Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          SizedBox(
-            width: 30,
-            height: 30.0,
-            child: Image.asset(
-              "assets/user_profile.png",
-              fit: BoxFit.fill,
-            ),
-          ),
-          TextField(
-            keyboardType: TextInputType.number,
-            obscureText: false,
-            enabled: false,
-            textAlign: TextAlign.start,
-            cursorColor: Color(0xffe64a8b),
-            decoration: InputDecoration(
-              contentPadding: EdgeInsets.fromLTRB(20, 8, 8, 8),
-              hintText: "0943188471",
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(30.0)),
-            ),
-          ),
-        ],
-      );
-  final Widget packageField = Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          SizedBox(
-            width: 30,
-            height: 30.0,
-            child: Image.asset(
-              "assets/play.png",
-              fit: BoxFit.fill,
-            ),
-          ),
-          Expanded(
-            child: TextField(
-              keyboardType: TextInputType.number,
-              obscureText: false,
-              enabled: false,
-              textAlign: TextAlign.start,
-              cursorColor: Color(0xffe64a8b),
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.fromLTRB(20, 8, 8, 8),
-                hintText: "အသုံးပြုမှု : ဝန်ဆောင်မှုရယူပြီး",
-                border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(30.0)),
-              ),
-            ),
-          ),
-        ],
-      );
-*/
 
   final Widget phoneField = Container(
     height: 50,

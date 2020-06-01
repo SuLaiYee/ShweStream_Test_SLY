@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shwe_stream_test/PODObject/movies_download_info.dart';
-import 'package:shwe_stream_test/base_app_bar.dart';
+import 'package:shwe_stream_test/ShweStreamUI/base_app_bar.dart';
 
 class MoviesDownloadPage extends StatefulWidget {
   final List<MoviesDownloadInfo> movies = new List();
@@ -106,28 +106,6 @@ class _MoviesDownloadPageState extends State<MoviesDownloadPage> {
                   iconSize: 25.0,
                   color: Colors.pink,
                 ),
-
-               /* InkWell(
-                  child: Container(
-                    //padding: EdgeInsets.only(top: 12),
-                    child: _affectedByStateChange,
-                    *//*Image.asset(
-                      "assets/play.png",
-                      fit: BoxFit.fill,
-                    ),*//*
-                  ),
-                  onTap: () {
-                    setState(() {
-                      if()
-                      _thisWillAffectTheState();
-                    });
-                  },
-                  onLongPress: () {
-                    setState(() {
-                      _thisWillAlsoAffectTheState();
-                    });
-                  },
-                ),*/
                 Padding(
                   padding: const EdgeInsets.only(bottom: 4.0),
                   child: Text(
@@ -199,44 +177,9 @@ class _MoviesDownloadPageState extends State<MoviesDownloadPage> {
                     ),
                   ),
                   progressBar,
-
-                  /* Padding(
-                    padding: const EdgeInsets.fromLTRB(8,0,0,4),
-                    child: Text(
-                      movies.movEpsoide,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),*/
                 ],
               ),
             ),
-            /*Container(
-              width: 80,
-              height: 55,
-              padding: EdgeInsets.all(4.0),
-              margin: EdgeInsets.only(right: 16.0),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  border:
-                  Border.all(color: Colors.grey, width: 1)),
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    child:  Image.asset(
-                      "assets/down_pink.png",
-
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Download" ,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
-            ),*/
           ],
         ),
       ),

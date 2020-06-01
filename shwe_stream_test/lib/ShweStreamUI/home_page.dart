@@ -1,11 +1,11 @@
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:shwe_stream_test/base_app_bar.dart';
-import 'package:shwe_stream_test/download_dialog.dart';
-import 'package:shwe_stream_test/home_menu_drawer.dart';
-import 'package:shwe_stream_test/internet_connection_dialog.dart';
-import 'package:shwe_stream_test/movie_category_list.dart';
+import 'package:shwe_stream_test/ShweStreamUI/base_app_bar.dart';
+import 'package:shwe_stream_test/ShweStreamUI/download_dialog.dart';
+import 'package:shwe_stream_test/ShweStreamUI/home_menu_drawer.dart';
+import 'package:shwe_stream_test/ShweStreamUI/internet_connection_dialog.dart';
+import 'package:shwe_stream_test/ShweStreamUI/movie_category_list.dart';
 import 'adv_promotion.dart';
 import 'dart:async';
 import 'dart:io';
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-     initConnectivity(); //before calling on button press
+    initConnectivity(); //before calling on button press
     _connectionSubscription =
         _connectivity.onConnectivityChanged.listen((ConnectivityResult result) {
           setState(() {
@@ -95,7 +95,8 @@ class _HomePageState extends State<HomePage> {
       _connectionStatus = connectionStatus;
     });
     print("InitConnectivity : $_connectionStatus");
-    if(_connectionStatus == "ConnectivityResult.mobile" || _connectionStatus == "ConnectivityResult.wifi") {
+    if (_connectionStatus == "ConnectivityResult.mobile" ||
+        _connectionStatus == "ConnectivityResult.wifi") {
       //getData();
     } else {
       showInternetConnectionDialog(context);
@@ -103,19 +104,8 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  //makes the request
-/*  Future<String> getData() async {
-    http.Response response = await http.get(
-        Uri.encodeFull("https://jsonplaceholder.typicode.com/posts"),
-        headers: {"Accept": "application/json"});
-    List data = JSON.decode(response.body);
-    print(data[1]);
-  }*/
-
-
   @override
   Widget build(BuildContext context) {
-
     final CarouselSlider autoPlayDemo = CarouselSlider(
       height: 240,
       viewportFraction: 0.9,
@@ -123,7 +113,7 @@ class _HomePageState extends State<HomePage> {
       autoPlay: true,
       enlargeCenterPage: true,
       items: imgList.map(
-        (url) {
+            (url) {
           return Container(
             margin: EdgeInsets.all(5.0),
             child: ClipRRect(
@@ -149,18 +139,18 @@ class _HomePageState extends State<HomePage> {
         drawer: HomeMenuDrawer(),
         body: Container(
             child: ListView(
-          physics: const AlwaysScrollableScrollPhysics(),
-          children: <Widget>[
-            Container(color: Color(0xFFD6D6D6), child: autoPlayDemo),
-            ADPromotion(),
-            MovieCategoryList(title: "မြန်မာရုပ်ရှင်ဇာတ်ကားကောင်းများ"),
-            MovieCategoryList(title: "ကိုရီးယားဒရာမာဇာတ်လမ်းတွဲများ"),
-            MovieCategoryList(title: "သဘာဝလွန်ဖြစ်ရပ်ဆန်းများ"),
-            MovieCategoryList(title: "တဝါးဝါး တဟားဟား"),
-            MovieCategoryList(title: "အက်ရှင် ဖိုက်တင်"),
-            MovieCategoryList(title: "အငြိမ့်နှင့်နှစ်ပါးသွား"),
-          ],
-        )));
+              physics: const AlwaysScrollableScrollPhysics(),
+              children: <Widget>[
+                Container(color: Color(0xFFD6D6D6), child: autoPlayDemo),
+                ADPromotion(),
+                MovieCategoryList(title: "မြန်မာရုပ်ရှင်ဇာတ်ကားကောင်းများ"),
+                MovieCategoryList(title: "ကိုရီးယားဒရာမာဇာတ်လမ်းတွဲများ"),
+                MovieCategoryList(title: "သဘာဝလွန်ဖြစ်ရပ်ဆန်းများ"),
+                MovieCategoryList(title: "တဝါးဝါး တဟားဟား"),
+                MovieCategoryList(title: "အက်ရှင် ဖိုက်တင်"),
+                MovieCategoryList(title: "အငြိမ့်နှင့်နှစ်ပါးသွား"),
+              ],
+            )));
   }
 
 

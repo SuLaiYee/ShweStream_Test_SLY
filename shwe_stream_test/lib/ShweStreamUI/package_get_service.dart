@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shwe_stream_test/opt_code_page.dart';
-import 'package:shwe_stream_test/rule%20_question_bottom_app_bar.dart';
+import 'package:shwe_stream_test/ShweStreamUI/opt_code_page.dart';
+import 'package:shwe_stream_test/ShweStreamUI/rule%20_question_bottom_app_bar.dart';
 
 import 'custom_rounded_shape_button.dart';
 

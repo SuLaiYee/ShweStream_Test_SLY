@@ -1,42 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:shwe_stream_test/movie_category_grid.dart';
-import 'package:shwe_stream_test/movies_details.dart';
-import 'package:shwe_stream_test/process_dialog.dart';
+import 'package:shwe_stream_test/ShweStreamUI/movie_category_grid.dart';
+import 'package:shwe_stream_test/ShweStreamUI/movies_details.dart';
+import 'package:shwe_stream_test/ShweStreamUI/process_dialog.dart';
 
 class MovieCategoryList extends StatelessWidget {
   MovieCategoryList({this.title});
 
   final String title;
-
-  /*Container MoviesCategory(String movieLogo, String movieName) {
-    return Container(
-        //margin: EdgeInsets.fromLTRB(4, 4, 0, 0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Expanded(
-              child: ClipRRect(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(10.0),topRight: Radius.circular(10.0)),
-                  child: Image.asset(
-                    movieLogo,
-                    height: 150.0,
-                    width: 110.0,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-            ),
-            SizedBox(
-              height: 30,
-                child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Text(movieName, textAlign: TextAlign.center,),
-                )),
-          ],
-        )
-    );
-  }*/
 
   final GlobalKey<State> _keyLoader = new GlobalKey<State>();
 
@@ -105,7 +75,9 @@ class MovieCategoryList extends StatelessWidget {
       children: <Widget>[
         movieCategoryTitle,
         Expanded(
-          child: moviesItemList,
+          child: Container(
+              margin: EdgeInsets.only(bottom: 10.0),
+              child: moviesItemList),
         ),
       ],
     );
@@ -121,7 +93,6 @@ class MovieCategoryList extends StatelessWidget {
 
   Future<void> _handleSubmit(BuildContext context) async {
     try {
-
       Dialogs.showLoadingDialog(context, _keyLoader);//invoking login
       await Navigator.push(
           context,

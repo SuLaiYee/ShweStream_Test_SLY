@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shwe_stream_test/download_dialog.dart';
+import 'package:shwe_stream_test/ShweStreamUI/download_dialog.dart';
 
 class MovieEpCard extends StatelessWidget {
   MovieEpCard({this.title});
@@ -13,9 +13,6 @@ class MovieEpCard extends StatelessWidget {
       child: Card(
         elevation: 3,
         color: Color(0xFFEEEEEE),
-        /*shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(3.0),
-        ),*/
         child: Column(
           children: <Widget>[
             Row(
@@ -79,35 +76,6 @@ class MovieEpCard extends StatelessWidget {
                   ),
                   onTap:(){ showAlertDialog(context);}
                 ),
-
-                //download with image and text design
-                /* Container(
-                         width: 80,
-                         height: 55,
-                         padding: EdgeInsets.all(4.0),
-                          margin: EdgeInsets.only(right: 16.0),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              border:
-                                  Border.all(color: Colors.grey, width: 1)),
-                          child: Column(
-                            children: <Widget>[
-                              SizedBox(
-                                  child:  Image.asset(
-                                    "assets/down_pink.png",
-
-                                  ),
-                              ),
-                              Align(
-                                alignment: Alignment.center,
-                                  child: Text(
-                                    "Download" ,
-                                    textAlign: TextAlign.center,
-                                  ),
-                              ),
-                            ],
-                          ),
-                        ),*/
               ],
             ),
             Padding(

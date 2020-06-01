@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:chewie/chewie.dart';
 import 'package:chewie/src/chewie_player.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:shwe_stream_test/download_dialog.dart';
-import 'package:shwe_stream_test/movie_ep_card.dart';
-import 'package:shwe_stream_test/movies_description.dart';
-import 'package:shwe_stream_test/shwestream_video_player.dart';
-import 'package:shwe_stream_test/snack_bar.dart';
-import 'package:shwe_stream_test/chewie_demo_player.dart';
+import 'package:shwe_stream_test/ShweStreamUI/download_dialog.dart';
+import 'package:shwe_stream_test/ShweStreamUI/movie_ep_card.dart';
+import 'package:shwe_stream_test/ShweStreamUI/movies_description.dart';
+import 'package:shwe_stream_test/ShweStreamUI/shwestream_video_player.dart';
+import 'package:shwe_stream_test/ShweStreamUI/snack_bar.dart';
+import 'package:shwe_stream_test/ShweStreamUI/chewie_demo_player.dart';
 import 'package:video_player/video_player.dart';
 
 class MoviesDetails extends StatefulWidget {
@@ -58,36 +58,6 @@ class _MoviesDetailsState extends State<MoviesDetails>
     final playButton = Container(
       margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
       height: 50,
-
-      /*RaisedButton(
-        onPressed: () {
-          Navigator.pushNamed(context, widget.navigatePage);
-        },
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
-        padding: EdgeInsets.all(0.0),
-        child: Ink(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [Color(0xff9c1dda), Color(0xffee498f)],
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-              ),
-              borderRadius: BorderRadius.circular(30.0)
-          ),
-          child: Container(
-            //constraints: BoxConstraints(maxWidth: 800.0, minHeight: 50.0),
-            alignment: Alignment.center,
-            child: Text(
-              widget.btnText,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-      );*/
 
       child: RaisedButton(
         shape:
@@ -400,22 +370,5 @@ class _MoviesDetailsState extends State<MoviesDetails>
       _isVisibleActor = false;
     }
   }
-/*setColor(int tabIndex) {
-    if (tabIndex == 0) {
-      return [Color(0xfff8bbd0), Color(0xfff48fb1)] ;
-      _isVisibleVideo = true;
-      _isVisibleActor = false;
-      _isVisibleFavouite = false;
-    }
-    if (tabIndex == 1) {
-      return [Color(0xfff8bbd0), Color(0xfff48fb1)] ;
-    }
-    if (tabIndex == 2) {
-      return [Color(0xfff8bbd0), Color(0xfff48fb1)] ;
-    }
-    if (tabIndex == 3) {
-      return [Color(0xffffff), Color(0xffffff)] ;
-    }
-*/
 
 }

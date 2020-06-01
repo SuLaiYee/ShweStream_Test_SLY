@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:shwe_stream_test/about_us.dart';
-import 'package:shwe_stream_test/download_dialog.dart';
-import 'package:shwe_stream_test/home_page.dart';
-import 'package:shwe_stream_test/internet_connection_dialog.dart';
-import 'package:shwe_stream_test/movie_category_grid.dart';
-import 'package:shwe_stream_test/movie_favourites.dart';
-import 'package:shwe_stream_test/movies_download.dart';
-import 'package:shwe_stream_test/notification_setting.dart';
-import 'package:shwe_stream_test/questions_and_answers.dart';
-import 'package:shwe_stream_test/rule_and_discipline.dart';
-import 'package:shwe_stream_test/user_profile.dart';
+import 'package:shwe_stream_test/ShweStreamUI/about_us.dart';
+import 'package:shwe_stream_test/ShweStreamUI/home_page.dart';
+import 'package:shwe_stream_test/ShweStreamUI/movie_category_grid.dart';
+import 'package:shwe_stream_test/ShweStreamUI/movie_favourites.dart';
+import 'package:shwe_stream_test/ShweStreamUI/movies_download.dart';
+import 'package:shwe_stream_test/ShweStreamUI/notification_setting.dart';
+import 'package:shwe_stream_test/ShweStreamUI/package_get_service.dart';
+import 'package:shwe_stream_test/ShweStreamUI/questions_and_answers.dart';
+import 'package:shwe_stream_test/ShweStreamUI/rule_and_discipline.dart';
+import 'package:shwe_stream_test/ShweStreamUI/user_profile.dart';
 
 class HomeMenuDrawer extends StatelessWidget {
   @override
@@ -88,10 +87,6 @@ class HomeMenuDrawer extends StatelessWidget {
               title: new Text("ဝန်ဆောင်မှု ပယ်ဖျက်ရန်"),
               trailing: new Icon(Icons.arrow_right),
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => InternetConnectionDialog()));
               }),
           new ListTile(
               title: new Text("အချက်အလက် ပြင်ဆင်ရန်"),

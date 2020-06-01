@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shwe_stream_test/custom_rounded_shape_button.dart';
-import 'package:shwe_stream_test/home_page.dart';
-import 'package:shwe_stream_test/package_get_service.dart';
-import 'package:shwe_stream_test/rule%20_question_bottom_app_bar.dart';
+import 'package:shwe_stream_test/ShweStreamUI/custom_rounded_shape_button.dart';
+import 'package:shwe_stream_test/ShweStreamUI/home_page.dart';
+import 'package:shwe_stream_test/ShweStreamUI/package_get_service.dart';
+import 'package:shwe_stream_test/ShweStreamUI/rule%20_question_bottom_app_bar.dart';
 
 class OPTCodePage extends StatefulWidget {
   OPTCodePage({Key key}) : super(key: key);
